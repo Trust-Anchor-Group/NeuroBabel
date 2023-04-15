@@ -1,0 +1,16 @@
+﻿<Module xmlns="http://waher.se/Schema/ModuleManifest.xsd">
+	<Content fileName="NeuroBabel.config"/>
+	<Folder name="Root">
+		<Folder name="Babel">
+			<Content fileName="Babel.cssx"/>
+			<Content fileName="Babel.js"/>
+			<Content fileName="Index.md"/>
+			<Content fileName="Master.md"/>
+			<Content fileName="Menu.md"/>
+			<Folder name="Api">
+				<Content fileName="PreviewMessage.ws"/>
+				<Content fileName="SendMessage.ws"/>
+			</Folder>
+		</Folder>
+	</Folder>
+</Module>
