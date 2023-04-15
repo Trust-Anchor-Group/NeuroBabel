@@ -16,10 +16,13 @@ PMessage:="<span class='nickName'>" + MarkdownEncode(PNickName) + "</span>\r\n\r
 	Replace("\\\\>","\\>");
 
 Html:=MarkdownToHtml(PMessage);
-LogDebug(Html);
 TabIDs:=GetTabIDs("/Babel/Index.md",{"Room":PRoom});
-LogDebug(TabIDs);
 
-PushEvent("/Babel/Index.md",{"Room":PRoom},"NewMessage",{"html":Html});
+foreach TabID in TabIDs do
+(
+	TabInfo:=GetTabInformation(TabID);
+	if TabInfo.Query.Language=Language then
+		ClientEvents.PushEvent([TabID],"NewMessage",{"html":Html});
+);
 
 Html

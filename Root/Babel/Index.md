@@ -137,7 +137,7 @@ else
 </fieldset>
 
 <label for="Message">Message: <span class='note'>You can format messages using [Markdown](/Markdown.md).</span></label>
-<textarea id="Message" name="Message" onkeydown="TrapTab(this,event)" onpaste="PasteContent(this,event)" required>
+<textarea id="Message" name="Message" onkeydown="TrapTab(this,event,'((Room))','((Language))','((NickName))')" onpaste="PasteContent(this,event)" required>
 </textarea>
 
 <button type="button" class="posButton" onclick="SendMessage('((Room))','((Language))','((NickName))')">Send</button>

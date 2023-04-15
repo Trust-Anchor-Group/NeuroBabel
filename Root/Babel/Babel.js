@@ -16,7 +16,7 @@ function SetNickName(Room,Language)
 	window.location.href = "Index.md?Room=" + encodeURIComponent(Room) + "&Language=" + Language + "&NickName=" + NickName;
 }
 
-function TrapTab(Control, Event)
+function TrapTab(Control, Event, Room, Language, NickName)
 {
 	if (Event.keyCode === 9)
 	{
@@ -27,6 +27,12 @@ function TrapTab(Control, Event)
 		var End = Control.selectionEnd;
 		Control.value = Value.substring(0, Start) + '\t' + Value.substring(End);
 		Control.selectionStart = Control.selectionEnd = Start + 1;
+	}
+	else if (Event.keyCode === 13)
+	{
+		Event.preventDefault();
+		SendMessage(Room, Language, NickName);
+		return;
 	}
 
 	InvalidatePreview();
@@ -127,6 +133,7 @@ function NewMessage(Data)
 	var Div = document.createElement("DIV");
 	Chat.appendChild(Div);
 	Div.innerHTML = Data.html;
+	window.scrollTo(0, document.body.scrollHeight);
 }
 
 function PasteContent(Control, Event)
