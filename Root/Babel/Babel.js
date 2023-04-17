@@ -108,15 +108,18 @@ function CancelMessage()
 function SendMessage(Room,Language,NickName)
 {
 	var Message = document.getElementById("Message").value;
+	CancelMessage();
+
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function ()
 	{
 		if (xhttp.readyState === 4)
 		{
-			if (xhttp.status === 200)
-				CancelMessage();
-			else
+			if (xhttp.status !== 200)
+			{
+				document.getElementById("Message").value = Message;
 				window.alert(xhttp.responseText);
+			}
 		}
 	};
 
@@ -128,7 +131,8 @@ function SendMessage(Room,Language,NickName)
 			"message": Message,
 			"room": Room,
 			"language": Language,
-			"nickName": NickName
+			"nickName": NickName,
+			"tabId": TabID
 		}));
 }
 

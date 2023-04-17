@@ -17,7 +17,8 @@ Welcome to TAG Neuro-Babel[^babel]. This service allows you to create multi-ling
 can participate using their own language. The service makes sure to translate each incoming message to the preferred language
 of each participant.
 
-**Privacy**: All messages are *public*, and may be forwarded to Microsoft Bing for translation to other languages.
+**Privacy**: All messages are *public*, and may be forwarded to OpenAI for translation to other languages. (OpenAI may
+sometimes be inventive in the translation.)
 
 **Ephemeral**: None of the messages are persisted on the server. You can therefore not see any chat history. It also
 means that if you loose connection, you may loose messages being sent during the disconnection. Any images or
@@ -137,7 +138,7 @@ else
 </div>
 </fieldset>
 
-<label for="Message">Message: <span class='note'>You can format messages using [Markdown](/Markdown.md).</span></label>
+<label for="Message">Message: <span class='note'>You can format messages using [Markdown](/Markdown.md), and paste images from clipboard.</span></label>
 <textarea id="Message" name="Message" onkeydown="TrapTabCREsc(this,event,'((Room))','((Language))','((NickName))')" 
 	onpaste="PasteContent(this,event,'((Room))','((NickName))')" required>
 </textarea>
