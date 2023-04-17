@@ -16,7 +16,7 @@ function SetNickName(Room,Language)
 	window.location.href = "Index.md?Room=" + encodeURIComponent(Room) + "&Language=" + Language + "&NickName=" + NickName;
 }
 
-function TrapTab(Control, Event, Room, Language, NickName)
+function TrapTabCREsc(Control, Event, Room, Language, NickName)
 {
 	if (Event.keyCode === 9)
 	{
@@ -32,6 +32,11 @@ function TrapTab(Control, Event, Room, Language, NickName)
 	{
 		Event.preventDefault();
 		SendMessage(Room, Language, NickName);
+		return;
+	}
+	else if (Event.keyCode === 27)
+	{
+		CancelMessage();
 		return;
 	}
 
@@ -136,7 +141,7 @@ function NewMessage(Data)
 	window.scrollTo(0, document.body.scrollHeight);
 }
 
-function PasteContent(Control, Event)
+function PasteContent(Control, Event, Room, NickName)
 {
 	var Items = Event.clipboardData.items;
 	var i, c = Items.length;
@@ -156,6 +161,8 @@ function PasteContent(Control, Event)
 			{
 				var Form = new FormData();
 
+				Form.append("Room", Room);
+				Form.append("NickName", NickName);
 				Form.append("Image", Image, FileName);
 
 				var xhttp = new XMLHttpRequest();
@@ -178,55 +185,11 @@ function PasteContent(Control, Event)
 					}
 				};
 
-				xhttp.open("POST", "/Community/Api/Upload.ws", true);
+				xhttp.open("POST", "/Babel/Api/Upload.ws", true);
 				xhttp.setRequestHeader("Accept", "text/plain");
 				xhttp.send(Form);
 			}
 			break;
 		}
-	}
-}
-
-function FindFirstChild(ParentElement, ElementType)
-{
-	return FindElement(ParentElement, ParentElement.firstChild, ElementType);
-}
-
-function FindNextChild(ParentElement, CurrentSibling, ElementType)
-{
-	return FindElement(ParentElement, CurrentSibling.nextSibling, ElementType);
-}
-
-function FindElement(ParentElement, Loop, ElementType)
-{
-	while (Loop)
-	{
-		if (Loop.tagName === ElementType)
-			return Loop;
-
-		Loop = Loop.nextSibling;
-	}
-
-	Loop = document.createElement(ElementType);
-	ParentElement.appendChild(Loop);
-
-	return Loop;
-}
-
-function TrapCREsc(DefaultButtonId, CancelButtonId, Event)
-{
-	if (Event.keyCode === 13)
-	{
-		Event.preventDefault();
-
-		var Button = document.getElementById(DefaultButtonId);
-
-		if (!Button.hasAttribute("disabled"))
-			window.setTimeout(Search, 0);
-	}
-	else if (Event.keyCode === 27)
-	{
-		Event.preventDefault();
-		document.getElementById(CancelButtonId).click();
 	}
 }

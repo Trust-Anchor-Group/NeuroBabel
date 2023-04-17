@@ -3,6 +3,7 @@ Description: Main page the Multi-language Multi-user chat service.
 Date: 2023-04-15
 Author: Peter Waher
 Master: Master.md
+Cache-Control: max-age=0, no-cache, no-store
 Parameter: Room
 Parameter: Language
 Parameter: NickName
@@ -137,7 +138,8 @@ else
 </fieldset>
 
 <label for="Message">Message: <span class='note'>You can format messages using [Markdown](/Markdown.md).</span></label>
-<textarea id="Message" name="Message" onkeydown="TrapTab(this,event,'((Room))','((Language))','((NickName))')" onpaste="PasteContent(this,event)" required>
+<textarea id="Message" name="Message" onkeydown="TrapTabCREsc(this,event,'((Room))','((Language))','((NickName))')" 
+	onpaste="PasteContent(this,event,'((Room))','((NickName))')" required>
 </textarea>
 
 <button type="button" class="posButton" onclick="SendMessage('((Room))','((Language))','((NickName))')">Send</button>

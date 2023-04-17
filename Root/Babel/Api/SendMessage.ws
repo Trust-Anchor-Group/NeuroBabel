@@ -33,7 +33,7 @@ Background((
 			if !Translations.ContainsKey(Language2) then
 			(
 				if !exists(Key) then
-					Key:=GetSetting("NeuroBabel.Key","");
+					Key:=GetSetting("NeuroBabel.MsTranslator.Key","");
 
 				if empty(Key) then
 					Translations[Language2]:=Html
@@ -48,7 +48,7 @@ Background((
 				);
 			);
 
-			ClientEvents.PushEvent([TabID],"NewMessage",{"html":Translations[Language2]})
+			PushEvent(TabID,"NewMessage",{"html":Translations[Language2]})
 		)
 	)
 ));

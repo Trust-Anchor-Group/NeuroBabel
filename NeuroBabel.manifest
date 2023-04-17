@@ -10,6 +10,9 @@
 			<Folder name="Api">
 				<Content fileName="PreviewMessage.ws"/>
 				<Content fileName="SendMessage.ws"/>
+				<Content fileName="Upload.ws"/>
+			</Folder>
+			<Folder name="Images">
 			</Folder>
 		</Folder>
 	</Folder>
