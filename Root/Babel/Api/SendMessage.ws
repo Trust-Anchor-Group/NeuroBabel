@@ -55,7 +55,7 @@ Background((
 						[
 							{
 								"role":"system",
-								"content":"You help to translate Markdown text from language code "+PLanguage+" to language code "+Language2+". Input is in raw Markdown. Output must be in raw Markdown, keeping the Markdown formatting of the input. No descriptive text or additional formatting must be included. No examples added. Result must only include the translation."
+								"content":"You help to translate Markdown text from language code "+PLanguage+" to language code "+Language2+". Input is in raw Markdown. Output must be in raw Markdown, keeping the Markdown formatting of the input. No descriptive text or additional formatting must be included. No examples added. Result must only include the translation. If the message is a question, don't answer the question, only translate the question."
 							},
 							{
 								"role":"user",
