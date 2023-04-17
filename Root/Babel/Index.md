@@ -4,9 +4,10 @@ Date: 2023-04-15
 Author: Peter Waher
 Master: Master.md
 Cache-Control: max-age=0, no-cache, no-store
+UserVariable: QuickLoginUser
+Login: /Babel/Login.md
 Parameter: Room
 Parameter: Language
-Parameter: NickName
 
 ==================
 
@@ -118,18 +119,6 @@ Then, you need to select the language you wish to use. Select the language from 
 </fieldset>
 [[
 )
-else if empty(NickName) then ]]
-<fieldset>
-<legend>Select language</legend>
-
-Finally, you need to select a Nick-Name you want to use in the chat, then press *Continue*.
-
-<label for="Language">Nick-Name:</label>  
-<input type="text" name="NickName" id="NickName" required autofocus/>
-
-<button type="button" class="posButton" onclick="SetNickName('((Room))','((Language))')">Continue</button>
-</fieldset>
-[[
 else
 ]]
 <fieldset>
@@ -139,11 +128,11 @@ else
 </fieldset>
 
 <label for="Message">Message: <span class='note'>You can format messages using [Markdown](/Markdown.md), and paste images from clipboard.</span></label>
-<textarea id="Message" name="Message" onkeydown="TrapTabCREsc(this,event,'((Room))','((Language))','((NickName))')" 
-	onpaste="PasteContent(this,event,'((Room))','((NickName))')" required>
+<textarea id="Message" name="Message" onkeydown="TrapTabCREsc(this,event,'((Room))','((Language))','((QuickLoginUser.UserName))')" 
+	onpaste="PasteContent(this,event,'((Room))','((QuickLoginUser.UserName))')" required>
 </textarea>
 
-<button type="button" class="posButton" onclick="SendMessage('((Room))','((Language))','((NickName))')">Send</button>
+<button type="button" class="posButton" onclick="SendMessage('((Room))','((Language))','((QuickLoginUser.UserName))')">Send</button>
 <button type="button" class="negButton" onclick="CancelMessage()">Cancel</button>
 
 <fieldset>

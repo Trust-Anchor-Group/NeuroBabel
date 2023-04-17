@@ -10,12 +10,6 @@ function SetLanguage(Room)
 	window.location.href = "Index.md?Room=" + encodeURIComponent(Room) + "&Language=" + Language;
 }
 
-function SetNickName(Room,Language)
-{
-	var NickName = document.getElementById("NickName").value;
-	window.location.href = "Index.md?Room=" + encodeURIComponent(Room) + "&Language=" + Language + "&NickName=" + NickName;
-}
-
 function TrapTabCREsc(Control, Event, Room, Language, NickName)
 {
 	if (Event.keyCode === 9)

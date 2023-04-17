@@ -1,3 +1,5 @@
+AuthenticateSession(Request,"QuickLoginUser");
+
 {
 	"Room":Required(Str(Room)),
 	"Room_Binary":Required(RoomBinary),

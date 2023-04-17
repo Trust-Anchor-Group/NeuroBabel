@@ -1,3 +1,5 @@
+AuthenticateSession(Request,"QuickLoginUser");
+
 PText:=(Posted??"").
 	Replace("{","\\{").
 	Replace("}","\\}").

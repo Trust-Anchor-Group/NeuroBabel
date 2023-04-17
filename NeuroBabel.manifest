@@ -5,6 +5,9 @@
 			<Content fileName="Babel.cssx"/>
 			<Content fileName="Babel.js"/>
 			<Content fileName="Index.md"/>
+			<Content fileName="Invitation.md"/>
+			<Content fileName="Login.md"/>
+			<Content fileName="LogOut.md"/>
 			<Content fileName="Master.md"/>
 			<Content fileName="Menu.md"/>
 			<Folder name="Api">

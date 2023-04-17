@@ -6,7 +6,8 @@
 * [](#)
 * [](#)
 * [%Title]
-* [](#)
+* {{exists(QuickLoginUser)?]][<img id='userAvatar' alt="((QuickLoginUser.UserName))" with="40" height="40" src="((QuickLoginUser.AvatarUrl ??? ""))?Width=40&Height=40"/> ((QuickLoginUser.UserName))](#)
+	* [Logout](/Babel/LogOut.md)[[ : ]][Login](/Babel/Login.md)[[}}
 * [Help](#)
 	* [Markdown](/Markdown.md)
 	* [Emojis](/Emojis.md)

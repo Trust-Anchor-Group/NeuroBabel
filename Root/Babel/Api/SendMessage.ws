@@ -1,3 +1,5 @@
+AuthenticateSession(Request,"QuickLoginUser");
+
 ({
 	"message": Required(Str(PMessage)),
 	"room": Required(Str(PRoom)),
@@ -6,7 +8,8 @@
 	"tabId": Required(Str(PTabId))
 }:=Posted) ??? BadRequest("Data not in expected format.");
 
-PMessage:="<span class='nickName'>" + MarkdownEncode(PNickName) + "</span>\r\n\r\n" + PMessage.
+Prefix:="<span class='nickName'>" + MarkdownEncode(PNickName) + "</span>\r\n\r\n";
+PMessage:=PMessage.
 	Replace("{","\\{").
 	Replace("}","\\}").
 	Replace("\\\\{","\\{").
@@ -16,7 +19,7 @@ PMessage:="<span class='nickName'>" + MarkdownEncode(PNickName) + "</span>\r\n\r
 	Replace("\\\\<","\\<").
 	Replace("\\\\>","\\>");
 
-Html:=MarkdownToHtml(PMessage);
+Html:=MarkdownToHtml(Prefix+PMessage);
 TabIDs:=GetTabIDs("/Babel/Index.md",{"Room":PRoom});
 Key:=null;
 Translations:={};
@@ -66,7 +69,7 @@ Background((
 					});
 
 					PMessage2:=(Resp.choices[0].message.content ??? PMessage);
-					Html2:=MarkdownToHtml(PMessage2);
+					Html2:=MarkdownToHtml(Prefix+PMessage2);
 					Translations[Language2]:=Html2
 				)
 			);
