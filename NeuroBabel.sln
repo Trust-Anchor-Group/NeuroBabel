@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Babel", "Babel", "{9C81CF6A
 		Root\Babel\Babel.cssx = Root\Babel\Babel.cssx
 		Root\Babel\Babel.js = Root\Babel\Babel.js
 		Root\Babel\Index.md = Root\Babel\Index.md
+		Root\Babel\Invitation.md = Root\Babel\Invitation.md
+		Root\Babel\Login.js = Root\Babel\Login.js
+		Root\Babel\Login.md = Root\Babel\Login.md
+		Root\Babel\LogOut.md = Root\Babel\LogOut.md
 		Root\Babel\Master.md = Root\Babel\Master.md
 		Root\Babel\Menu.md = Root\Babel\Menu.md
 	EndProjectSection
