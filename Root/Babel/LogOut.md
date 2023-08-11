@@ -1,4 +1,4 @@
-Title: Neuro.Babel Logout
+Title: Neuro-Babel Logout
 Description: This page logs you out from Neuro-Babel.
 Date: 2023-04-17
 Author: Peter Waher
