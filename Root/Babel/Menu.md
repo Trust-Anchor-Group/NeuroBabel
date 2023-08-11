@@ -11,8 +11,8 @@
 * [Help](#)
 	* [Markdown](/Markdown.md)
 	* [Emojis](/Emojis.md)
-	* [LinkedIn](https://www.linkedin.com/in/peterwaher/)
-	* [Contact](https://waher.se/Feedback.md)
+	* [LinkedIn](https://www.linkedin.com/company/trust-anchor-group/mycompany/)
+	* [Contact](https://lab.tagroot.io/Feedback.md)
 * [](#)
 
 </nav>
