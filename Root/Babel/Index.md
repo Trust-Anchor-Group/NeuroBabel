@@ -1,5 +1,5 @@
 Title: Neuro-Babel
-Description: Main page the Multi-language Multi-user chat service.
+Description: Main page of the Multi-language Multi-user chat service.
 Date: 2023-04-15
 Author: Peter Waher
 Master: Master.md
